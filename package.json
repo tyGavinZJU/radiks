@@ -1,13 +1,13 @@
 {
-  "name": "radiks",
-  "version": "0.2.1",
+  "name": "radiks-gavin-test",
+  "version": "0.2.6",
   "description": "Manage models with encryption and decentralized storage",
   "main": "lib/index.js",
-  "author": "Hank Stoever",
+  "author": "Hank Stoever & Gavin for test",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
-    "@babel/core": "^7.1.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-async-to-generator": "^7.1.0",
@@ -20,6 +20,7 @@
     "@types/uuid": "^3.4.4",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
@@ -40,6 +41,7 @@
     "typescript": "^3.3.3333"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "faker": "^4.1.0",
     "qs": "^6.5.2",
     "query-string": "^6.2.0",

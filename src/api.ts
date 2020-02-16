@@ -7,6 +7,7 @@ export const sendNewGaiaUrl = async (gaiaURL: string): Promise<boolean> => {
   const url = `${apiServer}/radiks/models/crawl`;
   // console.log(url, gaiaURL);
   const data = { gaiaURL };
+  console.log("[radiks Debug data]: ", JSON.stringify(data))
   const response = await fetch(url, {
     method: 'POST',
     body: JSON.stringify(data),

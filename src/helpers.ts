@@ -29,6 +29,7 @@ const stringToValue = (value: string, clazz: any) => {
 
 export const decryptObject = async (encrypted: any, model: Model) => {
   const privateKey = await model.encryptionPrivateKey();
+  console.log("[Debug in Radiks] decrypt PrivateKey is", privateKey)
   const decrypted = {
     ...encrypted,
   };
@@ -93,6 +94,7 @@ export const userGroupKeys = () => {
     personal: {},
     ...keys,
   };
+  console.log("[Debug in Radiks] UserGroupKeys, keysString and Keys are:",keysString,keys)
   return keys;
 };
 

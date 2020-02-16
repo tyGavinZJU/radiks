@@ -18,9 +18,9 @@ export default class GroupInvitation extends Model {
     userGroupId: String,
     signingKeyPrivateKey: String,
     signingKeyId: {
-      type:String,
-      decrypted:true
-    }
+      type: String,
+      decrypted: true,
+    },
   }
 
   static defaults = {

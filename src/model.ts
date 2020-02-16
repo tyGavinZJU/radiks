@@ -201,12 +201,14 @@ export default class Model {
       return true;
     }
     const signingKey = this.getSigningKey();
+
     this.attrs.signingKeyId = this.attrs.signingKeyId || signingKey._id;
     const { privateKey } = signingKey;
     const contentToSign: (string | number)[] = [this._id];
     if (this.attrs.updatedAt) {
       contentToSign.push(this.attrs.updatedAt);
     }
+    console.log("[Debug in Radiks] SigningKey and privateKey are:",signingKey,privateKey)
     const { signature } = signECDSA(privateKey, contentToSign.join('-'));
     this.attrs.radiksSignature = signature;
     return this;
@@ -235,8 +237,10 @@ export default class Model {
     if (this.attrs.userGroupId) {
       const { userGroups, signingKeys } = userGroupKeys();
       privateKey = signingKeys[userGroups[this.attrs.userGroupId]];
+      console.log("[Debug in Radiks] Has UserGroupID, userGroupId userGroups signingKeys privateKey are:",this.attrs.userGroupId,userGroups,signingKeys,privateKey)
     } else {
       privateKey = requireUserSession().loadUserData().appPrivateKey;
+      console.log("[Debug in Radiks] No UserGroupID, privateKey is:",privateKey)
     }
     return privateKey;
   }
